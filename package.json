@@ -1,0 +1,12 @@
+{
+  "name": "basic-api",
+  "version": "1.0.0",
+  "description": "Node server boilerplate",
+  "license": "MIT",
+  "author": "Henry Lau",
+  "type": "commonjs",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest --config jest.config.json --coverage --coverageReporters json-summary text html lcov"
+  }
+}
