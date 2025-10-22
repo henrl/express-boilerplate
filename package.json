@@ -4,9 +4,20 @@
   "description": "Node server boilerplate",
   "license": "MIT",
   "author": "Henry Lau",
-  "type": "commonjs",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "jest --config jest.config.json --coverage --coverageReporters json-summary text html lcov"
+    "dev": "ts-node index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "jest --coverage --coverageReporters json-summary text html lcov"
+  },
+  "dependencies": {
+    "http": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
   }
 }
