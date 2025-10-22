@@ -5,8 +5,17 @@ const host = 'localhost';
 const port = 3000;
 
 const listener = (req, res) => {
-    res.writeHead(200);
-    res.end("My first server");
+    fs.readFile(__dirname + "/index.html")
+        .then(contents => {
+            res.setHeader('Content-Type', "text/html");
+            res.writeHead(200);
+            res.end(contents);
+        })
+        .catch(err => {
+            res.writeHead(500);
+            res.end(err);
+            return;
+        })
 };
 
 const server = http.createServer(listener);
