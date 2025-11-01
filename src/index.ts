@@ -1,9 +1,11 @@
 import express, { Request, Response } from 'express';
 import { config } from 'dotenv';
+import { AuthorRouter } from './routes';
 
 config();
 const app = express();
 
+app.use("/authors", AuthorRouter);
 app.get("/", (req: Request, res: Response) => {
     res.send("hello world");
 });
