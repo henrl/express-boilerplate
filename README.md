@@ -8,3 +8,6 @@
 7. npm i dotenv
 8. Create a .env file and make sure .gitignore includes .env
 
+# Install Express
+9. npm i express
+10. Add express boilerplate.
