@@ -6,9 +6,9 @@
   "author": "Henry Lau",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "ts-node index.ts",
+    "dev": "ts-node src/index.ts",
     "build": "tsc",
-    "start": "node dist/index.js",
+    "start": "node dist/src/index.js",
     "test": "jest --coverage --coverageReporters json-summary text html lcov"
   },
   "dependencies": {
