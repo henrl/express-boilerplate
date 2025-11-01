@@ -12,6 +12,7 @@
     "test": "jest --coverage --coverageReporters json-summary text html lcov"
   },
   "dependencies": {
+    "dotenv": "^17.2.3",
     "http": "^0.0.1-security"
   },
   "devDependencies": {

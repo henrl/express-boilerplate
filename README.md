@@ -5,3 +5,6 @@
 4. npx covgen <insert email here>
 5. npm i http
 6. npm i --save-dev jest ts-jest ts-node typescript
+7. npm i dotenv
+8. Create a .env file and make sure .gitignore includes .env
+
