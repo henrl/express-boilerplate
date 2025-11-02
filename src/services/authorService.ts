@@ -9,3 +9,7 @@ const listOfAuthors = [
 export const getAuthorById = async (authorId: number): Promise<Author | undefined> => {
     return listOfAuthors.find(author => author.id === authorId);
 };
+
+export const getAuthors = async (): Promise<Author[]> => {
+    return listOfAuthors;
+}

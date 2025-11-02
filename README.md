@@ -9,5 +9,9 @@
 8. Create a .env file based off the env.sample file and make sure .gitignore includes .env
 
 # Install Express
-9. npm i express
-10. Add express boilerplate.
+1. npm i express
+2. Add express boilerplate.
+
+# Add tests
+1. npm i --save-dev jest supertest @types/jest @types/supertest
+2.  

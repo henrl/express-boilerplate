@@ -1,23 +1,14 @@
-import express, { Request, Response } from 'express';
-import { config } from 'dotenv';
+import { Request, Response, Router } from 'express';
 import { AuthorRouter } from './routes';
 import { appErrorHandler } from './middlewares/errorHandler';
+import { CustomError } from './types/errors';
 
-config();
-const app = express();
+const index = Router();
 
-app.use("/authors", AuthorRouter);
-app.get("/", (req: Request, res: Response) => {
-    res.send("hello world");
+index.use("/authors", AuthorRouter);
+index.use(appErrorHandler);
+index.all("/{*splat}", (_req: Request, res: Response) => {
+    res.status(404).json(new CustomError(404, 'Page Not Found'));
 });
-app.use(appErrorHandler);
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, (error: any) => {
-    if (error) {
-        throw error;
-    }
-    console.log(`Listening on port ${PORT}`);
-})
-
-
+export default index;

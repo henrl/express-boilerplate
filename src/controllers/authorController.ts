@@ -10,3 +10,8 @@ export const getAuthorById = async (req: Request, res: Response, next: NextFunct
     }
     res.status(200).json(author);
 }
+
+export const getAuthors = async (req: Request, res: Response) => {
+    const authors =  await authorService.getAuthors();
+    res.status(200).json(authors);
+}
