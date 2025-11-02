@@ -2,9 +2,11 @@ import { Request, Response, Router } from 'express';
 import { AuthorRouter } from './routes';
 import { appErrorHandler } from './middlewares/errorHandler';
 import { CustomError } from './types/errors';
+import bodyParser from 'body-parser';
 
 const index = Router();
 
+index.use(bodyParser.json());
 index.use("/authors", AuthorRouter);
 index.get("/", (_req: Request, res: Response) => {
     res.status(200).json({ success: true });

@@ -15,3 +15,9 @@ export const getAuthors = async (req: Request, res: Response) => {
     const authors =  await authorService.getAuthors();
     res.status(200).json(authors);
 }
+
+export const addAuthor = async (req: Request, res: Response) => {
+    const { name } = req.body;
+    await authorService.addAuthor({ name });
+    res.send(201);
+}

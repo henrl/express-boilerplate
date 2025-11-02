@@ -12,4 +12,10 @@ export const getAuthorById = async (authorId: number): Promise<Author | undefine
 
 export const getAuthors = async (): Promise<Author[]> => {
     return listOfAuthors;
+};
+
+export const addAuthor = async ({ name }: {name: string}): Promise<void> => {
+    const nextId = Math.max(...listOfAuthors.map(author => author.id)) + 1;
+    listOfAuthors.push({ id: nextId, name });
+    return;
 }
