@@ -6,6 +6,9 @@ import { CustomError } from './types/errors';
 const index = Router();
 
 index.use("/authors", AuthorRouter);
+index.get("/", (_req: Request, res: Response) => {
+    res.status(200).json({ success: true });
+})
 index.use(appErrorHandler);
 index.all("/{*splat}", (_req: Request, res: Response) => {
     res.status(404).json(new CustomError(404, 'Page Not Found'));
